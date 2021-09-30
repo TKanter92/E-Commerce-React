@@ -19,7 +19,24 @@ class Login  extends Component {
     };
     handleSubmit = (event) => {
         event.preventDefault();
+        this.getCredentials();
         
+    }
+    
+    getCredentials = async () => {
+        // debugger;
+        const credentials = {
+            username: this.state.username,
+            password: this.state.password,
+        };
+        try{
+            let response= await axios.post(`https://localhost:44394/api/authentication/login/`, credentials);
+            console.log(response);
+            this.state.jwt= response;
+        }
+        catch{
+            console.log("Unsuccessful Login");
+        }
     }
 
     render() { 
