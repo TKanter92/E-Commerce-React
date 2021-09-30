@@ -11,6 +11,7 @@ class Login  extends Component {
             password: "",
             jwt: null,
             register: false
+
         }
     }
 
@@ -26,8 +27,10 @@ class Login  extends Component {
     }
 
     navToRegister = (event) => {
-        debugger;
-        this.state.register = true;
+        // debugger;
+        if (this.state.register == false)
+        {this.state.register = true}
+        else{this.state.register = false}
         this.setState(
            {register: this.state.register} 
         );
@@ -53,7 +56,7 @@ class Login  extends Component {
         return ( 
             <div>
                 {this.state.register ? 
-                <Register />
+                <Register register = {this.state.register} navToRegister={this.navToRegister}/>
                 : 
                 <div>
                 <form onSubmit={(event) => this.handleSubmit(event)}>

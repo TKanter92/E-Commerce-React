@@ -11,7 +11,8 @@ class Register  extends Component {
             email:"",
             username: "",
             password:"",
-            user: props.user
+            user: props.user,
+            register: props.register
 
         }
     }
@@ -23,6 +24,7 @@ class Register  extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.getRegistrationInfo();
+        this.props.navToRegister();
     }
 
     getRegistrationInfo = async () => {

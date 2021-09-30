@@ -25,10 +25,6 @@ class App extends Component {
     }
   }
 
-  navigateToRegistration(){
-
-  }
-
 
   render() { 
     const user = this.state.user;
