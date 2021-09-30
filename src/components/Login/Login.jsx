@@ -30,7 +30,7 @@ class Login  extends Component {
             password: this.state.password,
         };
         try{
-            let response= await axios.post(`https://localhost:44394/api/authentication/login/`, credentials);
+            let response= await axios.post("https://localhost:44394/api/authentication/login/", credentials);
             console.log(response);
             this.state.jwt= response;
         }
