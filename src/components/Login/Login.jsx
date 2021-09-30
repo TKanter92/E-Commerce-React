@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Register from '../Register/Register';
 
 
 class Login  extends Component {
@@ -8,7 +9,8 @@ class Login  extends Component {
         this.state = { 
             username: "",
             password: "",
-            jwt: null
+            jwt: null,
+            register: false
         }
     }
 
@@ -21,6 +23,14 @@ class Login  extends Component {
         event.preventDefault();
         this.getCredentials();
         
+    }
+
+    navToRegister = (event) => {
+        debugger;
+        this.state.register = true;
+        this.setState(
+           {register: this.state.register} 
+        );
     }
     
     getCredentials = async () => {
@@ -41,13 +51,25 @@ class Login  extends Component {
 
     render() { 
         return ( 
-            <form onSubmit={(event) => this.handleSubmit(event)}>
-            <label>Username:</label>
-            <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/>
-            <label>Password:</label>
-            <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-            <button type="submit">Login</button>
-            </form>
+            <div>
+                {this.state.register ? 
+                <Register />
+                : 
+                <div>
+                <form onSubmit={(event) => this.handleSubmit(event)}>
+                <label>Username:</label>
+                <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/>
+                <label>Password:</label>
+                <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
+                <button type="submit">Login</button>
+                </form>
+                <div>
+                    <button onClick = {this.navToRegister} >Register</button>
+                </div>
+            </div>
+                }
+            </div>
+
          );
     }
 }

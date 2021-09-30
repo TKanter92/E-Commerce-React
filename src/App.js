@@ -24,6 +24,12 @@ class App extends Component {
 
     }
   }
+
+  navigateToRegistration(){
+
+  }
+
+
   render() { 
     const user = this.state.user;
     return (
@@ -36,7 +42,7 @@ class App extends Component {
                 if (!user){
                   return <Redirect to='/login' />;
                 } else {
-                  return <Register {...props} user={user} />
+                  return <App {...props} user={user} />
                 }
               }}
             />
