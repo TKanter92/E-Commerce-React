@@ -14,6 +14,7 @@ import AddProductForm from './components/AddProductForm/AddProductForm';
 class App extends Component {
   state = { 
       products: [],
+      user: "",
    }
 
   
@@ -23,7 +24,7 @@ class App extends Component {
     try{
       const user = jwtDecode(jwt);
       this.setState({
-        user: undefined
+        user: this.state.user
       });
       this.getAllProducts();
     } catch {

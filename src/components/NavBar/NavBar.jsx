@@ -10,6 +10,7 @@ class NavBar extends Component {
     super(props);
     this.state = { 
       user: props.user,
+      isLoggedIn: false,
 
      }
   }
@@ -18,6 +19,11 @@ class NavBar extends Component {
     localStorage.removeItem('token');
     console.log("Logged Out")
     console.log(localStorage);
+    this.setState({
+      user: "",
+      isLoggedIn: false
+    })
+   
   }
 
     //modal
@@ -29,6 +35,12 @@ class NavBar extends Component {
     this.setState({openModal:false})
   }
 
+  changeLogin = () =>{
+    this.setState({
+      isLoggedIn: true
+    })
+  }
+
   render() { 
     const user = this.state.user;
     console.log("user " + user);
@@ -37,12 +49,12 @@ class NavBar extends Component {
       <React.Fragment>
           
            
-          {!user ? 
+          {!this.state.isLoggedIn ? 
           <button onClick = {this.onClickButton} >Login</button>
-          : <button onclick = {this.logoutUser}>Logout</button>
+          : <button onClick = {() =>this.logoutUser()}>Logout</button>
           }
           <Modal className="modal" open={this.state.openModal} onClose={this.onCloseModal}>
-            <Login onCloseModal = {this.onCloseModal}/>
+            <Login onCloseModal = {this.onCloseModal} changeLogin = {this.changeLogin}/>
           </Modal>
         
    

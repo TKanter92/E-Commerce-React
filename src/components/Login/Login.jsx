@@ -24,6 +24,7 @@ class Login  extends Component {
         event.preventDefault();
         this.getCredentials();
         this.props.onCloseModal();
+        this.props.changeLogin();
         
     }
 
