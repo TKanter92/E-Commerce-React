@@ -50,13 +50,13 @@ class Register  extends Component {
         return ( 
             <form onSubmit={(event) => this.handleSubmit(event)}>
             <label>First Name:</label>
-            <input type="text" name="firstName" onChange={this.handleChange} value={this.state.firstName}/>
+            <input type="text" name="firstName" onChange={this.handleChange} value={this.state.firstName}/><br/>
             <label>Last Name:</label>
-            <input type="text" name="lastName" onChange={this.handleChange} value={this.state.lastName}/>
+            <input type="text" name="lastName" onChange={this.handleChange} value={this.state.lastName}/><br/>
             <label>Email:</label>
-            <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
+            <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/><br/>
             <label>Username:</label>
-            <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/>
+            <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/><br/>
             <label>Password:</label>
             <input type="text" name="password" onChange={this.handleChange} value={this.state.password}/>
             <button type="submit">Register</button>
