@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const DisplayProducts = (props) => {
     return (
         <React.Fragment>
@@ -15,7 +16,7 @@ const DisplayProducts = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.products.map((product) => {
+                    {props.productList.map((product) => {
                         return (
                             <tr key={product.productId}>
                                 <td>{product.productName}</td>

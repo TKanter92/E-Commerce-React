@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Register from '../Register/Register';
+import { Link } from 'react-router-dom';
 
 
 class Login  extends Component {
@@ -76,7 +77,6 @@ class Login  extends Component {
             </div>
                 }
             </div>
-
          );
     }
 }

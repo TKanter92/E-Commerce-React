@@ -10,9 +10,10 @@ import {BrowserRouter} from "react-router-dom";
 import axios from 'axios';
 import DisplayProducts from './components/DisplayProducts/DisplayProducts';
 import AddProductForm from './components/AddProductForm/AddProductForm';
+import HomePage from './components/HomePage/HomePage';
 
 class App extends Component {
-  state = { 
+    state = { 
       products: [],
       user: "",
    }
@@ -20,19 +21,21 @@ class App extends Component {
   
 
   componentDidMount() {
+    this.getAllProducts();
     const jwt = localStorage.getItem('token');
     try{
       const user = jwtDecode(jwt);
       this.setState({
         user: this.state.user
       });
-      this.getAllProducts();
+      console.log(this.state.products);
     } catch {
 
     }
   }
 
   async getAllProducts () {
+    // debugger;
     let response = await axios.get('https://localhost:44394/api/product')
     this.setState({
       products: response.data
@@ -53,21 +56,21 @@ class App extends Component {
         <div>
           <BrowserRouter>
           <Switch>
-            <Route path= '/home' render={props =>{
+            <Route path= '/' exact component={HomePage} />
+            {/* render={props =>{
                 if (!user){
                   return <Redirect to='/login' />;
                 } else {
                   return <App {...props} user={user} />
                 }
               }}
-            />
+            /> */}
             <Route path='/addnew' component={AddProductForm} />
-            {/* <Route path='/browse' component={DisplayProducts} /> */}
+            <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} />} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Login} />
             <Route path='/shoppingCart' component={Login} />
-            <Route path='/' component={Login} />
 
             <Redirect to='/not-found' />
           </Switch>
