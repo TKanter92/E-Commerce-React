@@ -31,6 +31,7 @@ class NavBar extends Component {
 
   render() { 
     const user = this.state.user;
+    console.log("user " + user);
     return ( 
 
       <React.Fragment>
