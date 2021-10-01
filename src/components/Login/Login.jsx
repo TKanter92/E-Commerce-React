@@ -63,7 +63,7 @@ class Login  extends Component {
                 <div>
                 <form onSubmit={(event) => this.handleSubmit(event)}>
                 <label>Username:</label>
-                <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/>
+                <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/><br/>
                 <label>Password:</label>
                 <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
                 <button type="submit">Login</button>
