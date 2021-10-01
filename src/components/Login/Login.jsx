@@ -23,6 +23,7 @@ class Login  extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.getCredentials();
+        this.props.onCloseModal();
         
     }
 
