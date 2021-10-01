@@ -35,6 +35,7 @@ class NavBar extends Component {
     this.setState({openModal:false})
   }
 
+  //Changes isLogged
   changeLogin = () =>{
     this.setState({
       isLoggedIn: true
