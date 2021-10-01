@@ -45,7 +45,9 @@ class Login  extends Component {
         try{
             let response= await axios.post("https://localhost:44394/api/authentication/login/", credentials);
             console.log(response);
-            this.state.jwt= response;
+            // this.state.jwt= response;
+            localStorage.setItem('token', response.token);
+            
         }
         catch{
             console.log("Unsuccessful Login");

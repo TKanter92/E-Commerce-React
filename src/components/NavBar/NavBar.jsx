@@ -1,21 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Login from '../Login/Login';
+import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css'
 
 
-const NavigationBar = ({ user }) => {
-    return(
+class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      user: props.user,
+
+     }
+  }
+
+
+  logoutUser =(event) =>{
+    localStorage.removeItem('token');
+    console.log("Logged Out")
+    console.log(localStorage);
+  }
+
+
+  render() { 
+    const user = this.state.user;
+    return ( 
+
+      <React.Fragment>
+          
+           
+          {/* <button onClick = {this.onClickButton} >Login</button> */}
+           <button type="button" onClick = {() => this.logoutUser()}>Logout</button>
+          
+
         
-        <React.Fragment>
-       {/* <div>
-         <Link to= '/'>Home</Link>
-        </div>
-        <div>
-        <Link to= '/login'>Login</Link>
-      </div>
-        <div>
-           <Link to= '/shoppingcart'>Shopping Cart</Link>
-       </div> */}
-       </React.Fragment>
-    )
+   
+    
+      </React.Fragment>
+     );
+  }
 }
-
-export default NavigationBar;
+ 
+export default NavBar;
