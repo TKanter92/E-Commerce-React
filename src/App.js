@@ -7,9 +7,14 @@ import Register from './components/Register/Register';
 import { Redirect } from 'react-router';
 import { Route, Switch } from "react-router";
 import {BrowserRouter} from "react-router-dom";
+import axios from 'axios';
+import DisplayProducts from './components/DisplayProducts/DisplayProducts';
+import AddProductForm from './components/AddProductForm/AddProductForm';
 
 class App extends Component {
-  state = {  }
+  state = { 
+      products: [],
+   }
 
   
 
@@ -20,9 +25,22 @@ class App extends Component {
       this.setState({
         user: undefined
       });
+      this.getAllProducts();
     } catch {
 
     }
+  }
+
+  async getAllProducts () {
+    let response = await axios.get('https://localhost:44394/api/product')
+    this.setState({
+      products: response.data
+    });
+  }
+
+  addNewProduct = async (productToAdd) => {
+    await axios.post('https://localhost:44394/api/product', productToAdd)
+    this.getAllProducts();
   }
 
 
@@ -42,6 +60,8 @@ class App extends Component {
                 }
               }}
             />
+            <Route path='/addnew' component={AddProductForm} />
+            {/* <Route path='/browse' component={DisplayProducts} /> */}
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Login} />

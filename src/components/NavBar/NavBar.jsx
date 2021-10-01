@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Login from '../Login/Login';
-import { Modal } from 'react-responsive-modal';
-import 'react-responsive-modal/styles.css'
+// import { Modal } from 'react-responsive-modal';
+// import 'react-responsive-modal/styles.css'
 
 
 class NavBar extends Component {
