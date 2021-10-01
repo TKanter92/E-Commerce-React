@@ -11,11 +11,13 @@ import axios from 'axios';
 import DisplayProducts from './components/DisplayProducts/DisplayProducts';
 import AddProductForm from './components/AddProductForm/AddProductForm';
 import HomePage from './components/HomePage/HomePage';
+import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 class App extends Component {
     state = { 
       products: [],
-      user: "",
+      user: undefined,
+      cart: [],
    }
 
   
@@ -26,7 +28,7 @@ class App extends Component {
     try{
       const user = jwtDecode(jwt);
       this.setState({
-        user: this.state.user
+        user: user
       });
       console.log(this.state.products);
     } catch {
@@ -42,6 +44,13 @@ class App extends Component {
     });
   }
 
+  getCartProducts = async() =>{
+    let response = await axios.get('https://localhost:44394/api/cart')
+    this.setState({
+      cart: response.data
+    });
+  }
+
   addNewProduct = async (productToAdd) => {
     await axios.post('https://localhost:44394/api/product', productToAdd)
     this.getAllProducts();
@@ -52,25 +61,28 @@ class App extends Component {
     const user = this.state.user;
     return (
       <div>
-        <NavBar user={user} />
+        <NavBar user = {user}/>
         <div>
           <BrowserRouter>
           <Switch>
-            <Route path= '/' exact component={HomePage} />
-            {/* render={props =>{
+            {/* <Route path= '/' exact component={HomePage} /> */}
+            <Route path='/'
+             render={props =>{
                 if (!user){
-                  return <Redirect to='/login' />;
+                  console.log("True: " +  this.state.user);
+                  return null;
                 } else {
-                  return <App {...props} user={user} />
+                  console.log("false: " +  this.state.user);
+                  return <DisplayProducts {...props} productList={this.state.products}  />
                 }
               }}
-            /> */}
+            /> 
             <Route path='/addnew' component={AddProductForm} />
             <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} />} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Login} />
-            <Route path='/shoppingCart' component={Login} />
+            <Route path='/shoppingCart' render={props => <ShoppingCart {...props} cartList={this.state.cart} />} />
 
             <Redirect to='/not-found' />
           </Switch>
