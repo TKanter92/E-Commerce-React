@@ -24,9 +24,13 @@ class Login  extends Component {
     };
     handleSubmit = (event) => {
         event.preventDefault();
-        this.getCredentials();
-        this.props.onCloseModal();
-        this.props.changeLogin();
+        const credentials = {
+            username: this.state.username,
+            password: this.state.password,
+        };
+        this.props.getCredentials(credentials);
+        //this.props.onCloseModal();
+        //this.props.changeLogin();
         
     }
 
@@ -40,23 +44,27 @@ class Login  extends Component {
         );
     }
     
-    getCredentials = async () => {
-        // debugger;
-        const credentials = {
-            username: this.state.username,
-            password: this.state.password,
-        };
-        try{
-            let response= await axios.post("https://localhost:44394/api/authentication/login/", credentials);
-            console.log(response);
-            // this.state.jwt= response;
-            localStorage.setItem('token', response.token);
+    // getCredentials = async () => {
+    //     // debugger;
+    //     const credentials = {
+    //         username: this.state.username,
+    //         password: this.state.password,
+    //     };
+    //     try{
+    //         let response= await axios.post("https://localhost:44394/api/authentication/login/", credentials);
+    //         console.log(response);
+    //         this.setState({
+    //             user: response.data.token
+    //         })
+    //         console.log("propsuser: " + this.props.user);
+    //         console.log("Loginuser: " + this.state.user);
+    //         localStorage.setItem('token', response.token);
             
-        }
-        catch{
-            console.log("Unsuccessful Login");
-        }
-    }
+    //     }
+    //     catch{
+    //         console.log("Unsuccessful Login");
+    //     }
+    // }
 
     render() { 
         return ( 

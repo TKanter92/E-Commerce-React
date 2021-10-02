@@ -56,21 +56,46 @@ class App extends Component {
     this.getAllProducts();
   }
 
+  getCredentials = async (credentials) => {
+    try{
+        let response= await axios.post("https://localhost:44394/api/authentication/login/", credentials);
+        console.log(response);
+        this.setState({
+            user: response.data.token
+        })
+        console.log("Loginuser: " + this.state.user);
+        localStorage.setItem('token', response.token);
+        
+    }
+    catch{
+        console.log("Unsuccessful Login");
+    }
+}
 
+  logoutUser =(event) =>{
+    localStorage.removeItem('token');
+    console.log("Logged Out")
+    console.log(localStorage);
+    this.setState({
+      user: "",
+      //isLoggedIn: false
+    })
+
+  }
   render() { 
-    const user = this.state.user;
+    //const user = this.state.user;
     return (
       <div>
-        <NavBar user = {user}/>
+        <NavBar user = {this.state.user} logoutUser={this.logoutUser}/>
         <div>
           <BrowserRouter>
           <Switch>
             {/* <Route path= '/' exact component={HomePage} /> */}
             <Route path='/'
              render={props =>{
-                if (!user){
+                if (!this.state.user){
                   console.log("True: " +  this.state.user);
-                  return null;
+                  return <Login {...props} getCredentials = {this.getCredentials}/>;
                 } else {
                   console.log("false: " +  this.state.user);
                   return <DisplayProducts {...props} productList={this.state.products}  />

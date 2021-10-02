@@ -15,16 +15,16 @@ class NavBar extends Component {
      }
   }
 
-  logoutUser =(event) =>{
-    localStorage.removeItem('token');
-    console.log("Logged Out")
-    console.log(localStorage);
-    this.setState({
-      user: "",
-      isLoggedIn: false
-    })
+  // logoutUser =(event) =>{
+  //   localStorage.removeItem('token');
+  //   console.log("Logged Out")
+  //   console.log(localStorage);
+  //   this.setState({
+  //     user: "",
+  //     isLoggedIn: false
+  //   })
    
-  }
+  // }
 
     //modal
   onClickButton = e =>{
@@ -43,16 +43,16 @@ class NavBar extends Component {
   }
 
   render() { 
-    const user = this.state.user;
-    console.log("user " + user);
+    //const user = this.state.user;
+    //console.log("user " + user);
     return ( 
 
       <React.Fragment>
           
            
-          {!this.state.isLoggedIn ? 
-          <button onClick = {this.onClickButton} >Login</button>
-          : <button onClick = {() =>this.logoutUser()}>Logout</button>
+          {!this.props.user ? 
+          null
+          : <button onClick = {() =>this.props.logoutUser()}>Logout</button>
           }
           <Modal className="modal" open={this.state.openModal} onClose={this.onCloseModal}>
             <Login onCloseModal = {this.onCloseModal} changeLogin = {this.changeLogin}/>
