@@ -78,7 +78,6 @@ class App extends Component {
     console.log(localStorage);
     this.setState({
       user: "",
-      //isLoggedIn: false
     })
 
   }
