@@ -52,7 +52,16 @@ class App extends Component {
   }
 
   addNewProduct = async (productToAdd) => {
-    await axios.post('https://localhost:44394/api/product', productToAdd)
+    console.log(productToAdd.productName);
+    const product = {
+      productName: productToAdd.productName,
+      artist: productToAdd.artist,
+      price: parseInt(productToAdd.price),
+      description: productToAdd.description,
+      genre: productToAdd.genre,
+      rating: parseInt(productToAdd.rating)
+    }
+    await axios.post('https://localhost:44394/api/product', product)
     this.getAllProducts();
   }
 
