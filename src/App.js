@@ -78,6 +78,7 @@ class App extends Component {
     console.log(localStorage);
     this.setState({
       user: "",
+      
     })
 
   }
@@ -90,7 +91,7 @@ class App extends Component {
           <BrowserRouter>
           <Switch>
             {/* <Route path= '/' exact component={HomePage} /> */}
-            <Route path='/'
+            <Route path='/' exact
              render={props =>{
                 if (!this.state.user){
                   console.log("True: " +  this.state.user);
