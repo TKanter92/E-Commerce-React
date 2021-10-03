@@ -52,7 +52,6 @@ class App extends Component {
   }
 
   addNewProduct = async (productToAdd) => {
-    console.log(productToAdd.productName);
     const product = {
       productName: productToAdd.productName,
       artist: productToAdd.artist,
