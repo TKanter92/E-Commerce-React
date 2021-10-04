@@ -36,7 +36,12 @@ class App extends Component {
     } catch {}
   }
 
+<<<<<<< HEAD
   async getAllProducts() {
+=======
+
+  async getAllProducts () {
+>>>>>>> d7565e42d53eb2de2480e3c5ba9a78bdadaa7f8a
     // debugger;
     let response = await axios.get("https://localhost:44394/api/product");
     this.setState({
@@ -44,8 +49,20 @@ class App extends Component {
     });
   }
 
+<<<<<<< HEAD
   getCartProducts = async () => {
     let response = await axios.get("https://localhost:44394/api/cart");
+=======
+  searchProducts(results){
+    console.log(results);
+    console.log("App");
+    //console.log(this.state.products);
+    //this.state.products = results;
+  }
+
+  getCartProducts = async() =>{
+    let response = await axios.get('https://localhost:44394/api/cart')
+>>>>>>> d7565e42d53eb2de2480e3c5ba9a78bdadaa7f8a
     this.setState({
       cart: response.data,
     });
@@ -111,6 +128,7 @@ class App extends Component {
         <TitleBar />
         <div>
           <BrowserRouter>
+<<<<<<< HEAD
             <Switch>
               {/* <Route path= '/' exact component={HomePage} /> */}
               <Route
@@ -177,6 +195,34 @@ class App extends Component {
               />
               <Redirect to="/not-found" />
             </Switch>
+=======
+          <Switch>
+            {/* <Route path= '/' exact component={HomePage} /> */}
+            <Route path='/' exact
+             render={props =>{
+               if (!this.state.user){
+                 console.log("True: " +  this.state.user);
+                  return <Login {...props} getCredentials = {this.getCredentials}/>;
+                } else {
+                  console.log("false: " +  this.state.user);
+                  return <DisplayProducts {...props} productList={this.state.products} searchProducts={this.searchProducts} />;
+                }
+              }}
+            /> 
+            {/* <Route path='/addnew' component={AddProductForm} /> */}
+            <Route path='/addnew' render={props => <AddProductForm {...props} addNewProduct={this.addNewProduct} />} />
+            <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} logoutUser={this.logoutUser}/>} />
+            <Route path='/register' component={Register} />
+            <Route path='/login' component={Login} />
+            <Route path='/logout' component={Login} />
+            <Route path='/shoppingCart' render={props => <ShoppingCart {...props} cartList={this.state.cart} />} />
+
+            
+            <Route path='/details'  render={props => <ProductDetails {...props} details={this.state.products} />} />
+            <Route path='/review'  render={props => <ReviewForm {...props} review={this.state.products} />} />
+            <Redirect to='/not-found' />
+          </Switch>
+>>>>>>> d7565e42d53eb2de2480e3c5ba9a78bdadaa7f8a
           </BrowserRouter>
           <Footer />
         </div>
