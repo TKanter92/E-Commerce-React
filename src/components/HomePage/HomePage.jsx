@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import TitleBar from '../TitleBar/TitleBar';
-import Footer from '../Footer/Footer';
+
 
 
 class HomePage extends Component {
