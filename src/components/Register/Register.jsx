@@ -49,19 +49,46 @@ class Register  extends Component {
 
     render() { 
         return (
-            <form onSubmit={(event) => this.handleSubmit(event)}>
-            <label>First Name:</label>
-            <input type="text" name="firstName" placeholder="Enter Name.." onChange={this.handleChange} value={this.state.firstName}/><br/>
-            <label>Last Name:</label>
-            <input type="text" name="lastName" onChange={this.handleChange} value={this.state.lastName}/><br/>
-            <label>Email:</label>
-            <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/><br/>
-            <label>Username:</label>
-            <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/><br/>
-            <label>Password:</label>
-            <input type="text" name="password" onChange={this.handleChange} value={this.state.password}/>
-            <button type="submit">Register</button>
-            </form>
+            <div className="d-flex container justify-content-center align-items-center">
+                <form className="form-group" onSubmit={(event) => this.handleSubmit(event)}>
+                    <div className = "row mb-3">
+                    <label>First Name:</label>
+                        <div className="col-sm-10">
+                        <input type="text" name="firstName" placeholder="Enter First Name..." onChange={this.handleChange} value={this.state.firstName}/><br/>
+                        </div>
+                    </div>
+                    <div className = "row mb-3">
+                    <label>Last Name:</label>
+                        <div className="col-sm-10">
+                        <input type="text" name="lastName" placeholder="Enter Last Name..." onChange={this.handleChange} value={this.state.lastName}/><br/>
+                        </div>
+                    </div>
+                    <div className = "row mb-3">
+                    <label>Email:</label>
+                        <div className="col-sm-10">
+                        <input type="text" name="email" placeholder="Email..." onChange={this.handleChange} value={this.state.email}/><br/>
+                        </div>
+                    </div>
+                    <div className = "row mb-3">
+                    <label>Username:</label>
+                        <div className="col-sm-10">
+                        <input type="text" name="username" placeholder="Enter Username..." onChange={this.handleChange} value={this.state.username}/><br/>
+                        </div>
+                    </div>
+                    <div className = "row mb-3">
+                    <label>Password:</label>
+                        <div className="col-sm-10">
+                        <input type="text" name="password" placeholder="Enter Password..." onChange={this.handleChange} value={this.state.password}/>
+                        </div>
+                    </div>
+                    <div className="row">
+                            <div className="col-sm-10 col-auto">
+                                <button type="submit" className="btn btn-primary">Register</button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+            
 
         );
     }
