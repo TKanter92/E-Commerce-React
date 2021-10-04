@@ -66,6 +66,7 @@ class App extends Component {
     }
     await axios.post('https://localhost:44394/api/product', product)
     this.getAllProducts();
+    window.location = '/browse';
   }
 
   getCredentials = async (credentials) => {

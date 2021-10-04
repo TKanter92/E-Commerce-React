@@ -27,7 +27,7 @@ const ReviewForm = (props) => {
     useEffect(()=> {
     },[getReviews, postReview])
 
-    // Get Reviews
+    // Get Review
     async function fetchReviews () {
         await axios.get("https://localhost:44394/api/review/")
         .then((response)=> {setPostReply(response.data)})
