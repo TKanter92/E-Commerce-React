@@ -40,12 +40,20 @@ class App extends Component {
     }
   }
 
+
   async getAllProducts () {
     // debugger;
     let response = await axios.get('https://localhost:44394/api/product')
     this.setState({
       products: response.data
     });
+  }
+
+  searchProducts(results){
+    console.log(results);
+    console.log("App");
+    //console.log(this.state.products);
+    //this.state.products = results;
   }
 
   getCartProducts = async() =>{
@@ -125,7 +133,7 @@ class App extends Component {
                   return <Login {...props} getCredentials = {this.getCredentials}/>;
                 } else {
                   console.log("false: " +  this.state.user);
-                  return <DisplayProducts {...props} productList={this.state.products}  />;
+                  return <DisplayProducts {...props} productList={this.state.products} searchProducts={this.searchProducts} />;
                 }
               }}
             /> 
