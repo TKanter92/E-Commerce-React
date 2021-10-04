@@ -27,15 +27,17 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.getAllProducts();
     const jwt = localStorage.getItem("token");
+    this.getAllProducts();
     try {
       const user = jwtDecode(jwt);
       this.setState({
         user: user,
       });
       console.log(this.state.products);
-    } catch {}
+    } catch(error) {
+      console.log(error);
+    }
   }
 
   async getAllProducts() {
