@@ -92,6 +92,19 @@ class App extends Component {
     })
 
   }
+
+  // Post Review
+  // postReview = async (user) => {
+  //   try{
+  //     let response = await axios.post("https://localhost:44394/api/review", user);
+  //     console.log("Review", response.data)  
+  //     newReview(response.data)
+  //   }
+  //   catch(err) {
+  //     console.log(err);
+  //   }
+  // }
+
   render() { 
     //const user = this.state.user;
     return (

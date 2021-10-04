@@ -23,7 +23,7 @@ function ProductDetails (props) {
 
     return(
         <div>
-          {/* {singleItem} */}
+          {singleItem}
         </div>
     )
 }

@@ -27,15 +27,17 @@ const ReviewForm = (props) => {
     useEffect(()=> {
     },[getReviews, postReview])
 
+    // Get Reviews
     async function fetchReviews () {
-        await axios.get(`https://localhost:44394/api/review/${props.reviewId}`)
+        await axios.get("https://localhost:44394/api/review/")
         .then((response)=> {setPostReply(response.data)})
         setGetReviews({
             ...getReviews,
-            comment_id:props.commentId
+            reviewId:props.reviewId
         })
     }
 
+   
     const handleChange= (event)=> {
         const newReviews={
             ...getReviews,
