@@ -8,7 +8,7 @@ const DisplayProducts = (props) => {
   // })
 
   async function searchResults(results) {
-    props.productList = results;
+    props.searchProducts(results);
   }
 
   return (
