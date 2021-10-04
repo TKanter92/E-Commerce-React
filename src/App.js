@@ -49,11 +49,15 @@ class App extends Component {
     });
   }
 
-  searchProducts(results){
+  searchProducts = (results) =>{
     console.log(results);
     console.log("App");
     //console.log(this.state.products);
-    //this.state.products = results;
+    console.log("this", this)
+    this.setState({
+      products: results
+    });
+   
   }
 
   getCartProducts = async() =>{
@@ -133,13 +137,13 @@ class App extends Component {
                   return <Login {...props} getCredentials = {this.getCredentials}/>;
                 } else {
                   console.log("false: " +  this.state.user);
-                  return <DisplayProducts {...props} productList={this.state.products} searchProducts={this.searchProducts} />;
+                  return <DisplayProducts {...props} productList={this.state.products} searchProducts={this.searchProducts} logoutUser={this.logoutUser}/>;
                 }
               }}
             /> 
             {/* <Route path='/addnew' component={AddProductForm} /> */}
             <Route path='/addnew' render={props => <AddProductForm {...props} addNewProduct={this.addNewProduct} />} />
-            <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} logoutUser={this.logoutUser}/>} />
+            <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} searchProducts={this.searchProducts} logoutUser={this.logoutUser}/>} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Login} />
