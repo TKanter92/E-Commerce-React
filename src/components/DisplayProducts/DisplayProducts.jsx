@@ -14,7 +14,7 @@ const DisplayProducts = (props) => {
   return (
     <React.Fragment>
       <Search product={props.productList} searchResults={searchResults} />
-      <table>
+      <table class="table table-striped table-dark">
         <thead>
           <tr>
             <th>Album Name</th>
@@ -23,6 +23,7 @@ const DisplayProducts = (props) => {
             <th>Description</th>
             <th>Genre</th>
             <th>Rating</th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody>
@@ -36,9 +37,11 @@ const DisplayProducts = (props) => {
                 <td>{product.description}</td>
                 <td>{product.genre}</td>
                 <td>{product.rating}</td>
-                <Link to={`/details/${product.productId}`}>
-                  Product Details
-                </Link>
+                <td>
+                  <Link to={`/details/${product.productId}`}>
+                    Product Details
+                  </Link>
+                </td>
               </tr>
             );
           })}
