@@ -16,6 +16,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import ReviewForm from './components/ReviewForm/ReviewForm';
 import TitleBar from './components/TitleBar/TitleBar';
 import Footer from './components/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
     state = { 

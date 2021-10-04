@@ -3,7 +3,7 @@ import axios from 'axios';
 import Register from '../Register/Register';
 import { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
-
+import { Container, Row, Col, Input, Button } from 'bootstrap';
 
 class Login  extends Component {
     constructor(props) {

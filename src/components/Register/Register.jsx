@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Container, Form} from 'react-bootstrap';
 
 
 class Register  extends Component {
@@ -47,10 +48,10 @@ class Register  extends Component {
     }
 
     render() { 
-        return ( 
+        return (
             <form onSubmit={(event) => this.handleSubmit(event)}>
             <label>First Name:</label>
-            <input type="text" name="firstName" onChange={this.handleChange} value={this.state.firstName}/><br/>
+            <input type="text" name="firstName" placeholder="Enter Name.." onChange={this.handleChange} value={this.state.firstName}/><br/>
             <label>Last Name:</label>
             <input type="text" name="lastName" onChange={this.handleChange} value={this.state.lastName}/><br/>
             <label>Email:</label>
@@ -61,6 +62,7 @@ class Register  extends Component {
             <input type="text" name="password" onChange={this.handleChange} value={this.state.password}/>
             <button type="submit">Register</button>
             </form>
+
         );
     }
 }
