@@ -29,8 +29,6 @@ class Login  extends Component {
             password: this.state.password,
         };
         this.props.getCredentials(credentials);
-        //this.props.onCloseModal();
-        //this.props.changeLogin();
         
     }
 
@@ -44,28 +42,6 @@ class Login  extends Component {
         );
     }
     
-    // getCredentials = async () => {
-    //     // debugger;
-    //     const credentials = {
-    //         username: this.state.username,
-    //         password: this.state.password,
-    //     };
-    //     try{
-    //         let response= await axios.post("https://localhost:44394/api/authentication/login/", credentials);
-    //         console.log(response);
-    //         this.setState({
-    //             user: response.data.token
-    //         })
-    //         console.log("propsuser: " + this.props.user);
-    //         console.log("Loginuser: " + this.state.user);
-    //         localStorage.setItem('token', response.token);
-            
-    //     }
-    //     catch{
-    //         console.log("Unsuccessful Login");
-    //     }
-    // }
-
     render() { 
         return ( 
             <div>
@@ -74,14 +50,27 @@ class Login  extends Component {
                 : 
                 <div>
                 <form onSubmit={(event) => this.handleSubmit(event)}>
-                <label>Username:</label>
-                <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/><br/>
-                <label>Password:</label>
-                <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-                <button type="submit">Login</button>
+                    <div className = "row mb-3">
+                        <label>Username:</label>
+                        <div className="col-sm-10">
+                            <input type="text" name="username" placeHolder="Username..." onChange={this.handleChange} value={this.state.username}/><br/>
+                        </div>        
+                    </div>
+                    <div className = "row mb-3">
+                        <label>Password:</label>
+                        <div className="col-sm-10">
+                            <input type="text" name="password" placeHolder="Password..." onChange={this.handleChange} value={this.state.password}/><br/>
+                        </div>       
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-10 col-auto">
+                            <button type="submit" className="btn btn-primary">Login</button>
+                            <button className="btn btn-secondary" onClick = {this.navToRegister} >Register</button>
+                        </div>
+                    </div>
                 </form>
                 <div>
-                    <button onClick = {this.navToRegister} >Register</button>
+                    
                 </div>
             </div>
                 }

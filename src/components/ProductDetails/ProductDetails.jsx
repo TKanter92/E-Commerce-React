@@ -19,14 +19,8 @@ function ProductDetails(props) {
     return <h4>Loading product...</h4>;
   } else {
     console.log("product", product);
-    // product.map((item) => {
-    // if (item.is_available === true) {
     return (
       <tr>
-        {/* <td>{item.productName}</td>
-          <td>{item.price}</td>
-          <td>{item.description}</td>
-          <td>{item.genre}</td> */}
         <td>{product.productName}</td>
         <td>{product.artist}</td>
         <td>{product.genre}</td>
@@ -35,13 +29,7 @@ function ProductDetails(props) {
         <td>{product.description}</td>
       </tr>
     );
-    // } else {
-    //   return console.log("Not retrieving the product item");
-    // }
-    // });
   }
-
-  //   return <div>{singleItem}</div>;
 }
 
 export default ProductDetails;
