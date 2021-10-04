@@ -112,17 +112,16 @@ class App extends Component {
     //const user = this.state.user;
     return (
       <div>
-        <TitleBar />
         <NavBar user = {this.state.user} logoutUser={this.logoutUser}/>
-        <Footer />
+        <TitleBar />
         <div>
           <BrowserRouter>
           <Switch>
             {/* <Route path= '/' exact component={HomePage} /> */}
             <Route path='/' exact
              render={props =>{
-                if (!this.state.user){
-                  console.log("True: " +  this.state.user);
+               if (!this.state.user){
+                 console.log("True: " +  this.state.user);
                   return <Login {...props} getCredentials = {this.getCredentials}/>;
                 } else {
                   console.log("false: " +  this.state.user);
@@ -144,6 +143,7 @@ class App extends Component {
             <Redirect to='/not-found' />
           </Switch>
           </BrowserRouter>
+            <Footer />
         </div>
       </div>
 
