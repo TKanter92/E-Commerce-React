@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Search from '../Search/Search';
+
 
 
 const DisplayProducts = (props) => {
 
-    
+    // useEffect(()=>{
+    //     searchResults();
+    // })
+
+   async function searchResults(results){
+       props.productList = results;
+
+   } 
 
     return (
         <React.Fragment>
+
             <button onClick = {() =>this.props.logoutUser()}>Logout</button>
+            <Search product = {props.productList} searchResults={searchResults}/>
             <table>
                 <thead>
                     <tr>
