@@ -28,6 +28,11 @@ function ProductDetails(props) {
           <td>{item.description}</td>
           <td>{item.genre}</td> */}
         <td>{product.productName}</td>
+        <td>{product.artist}</td>
+        <td>{product.genre}</td>
+        <td>{product.rating}</td>
+        <td>{product.price}</td>
+        <td>{product.description}</td>
       </tr>
     );
     // } else {
