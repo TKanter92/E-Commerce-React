@@ -131,7 +131,7 @@ class App extends Component {
             /> 
             {/* <Route path='/addnew' component={AddProductForm} /> */}
             <Route path='/addnew' render={props => <AddProductForm {...props} addNewProduct={this.addNewProduct} />} />
-            <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} />} />
+            <Route path='/browse' render={props => <DisplayProducts {...props} productList={this.state.products} logoutUser={this.logoutUser}/>} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Login} />

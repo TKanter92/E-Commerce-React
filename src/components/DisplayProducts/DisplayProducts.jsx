@@ -2,8 +2,12 @@ import React from 'react';
 
 
 const DisplayProducts = (props) => {
+
+    
+
     return (
         <React.Fragment>
+            <button onClick = {() =>this.props.logoutUser()}>Logout</button>
             <table>
                 <thead>
                     <tr>
@@ -26,6 +30,7 @@ const DisplayProducts = (props) => {
                                 <td>{product.genre}</td>
                                 <td>{product.rating}</td>
                                 {/* <td><button onClick={ () => props.addToCart(product)}>Add To Cart</button></td> */}
+                                
                             </tr>
                         )
                     })}
