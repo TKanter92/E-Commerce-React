@@ -36,7 +36,10 @@ class NavBar extends Component {
       <React.Fragment>
         {!this.props.user ? 
           null
-          : <button onClick = {() =>this.props.logoutUser()}>Logout</button>
+          : 
+          <div className="d-flex container justify-content-end align-items-center">
+            <button className="btn btn-outline-primary" onClick = {() =>this.props.logoutUser()}>Logout</button>
+          </div>   
         }
       </React.Fragment>
      );

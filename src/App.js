@@ -106,8 +106,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar user={this.state.user} logoutUser={this.logoutUser} />
         <TitleBar />
+        <NavBar user={this.state.user} logoutUser={this.logoutUser} />
         <div>
           <BrowserRouter>
             <Switch>

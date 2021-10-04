@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+
 
 class Search extends Component {
     constructor(props) {
@@ -45,10 +47,11 @@ class Search extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <form onSubmit = {this.handleSubmit}>
-                    <label>Search:</label>
-                    <input name="search" onChange={this.handleChange} value={this.state.search}></input>
-                    <button type="submit">Search</button>
+                <form className="" onSubmit = {this.handleSubmit}>
+                    <input name="search" placeholder="Search..." onChange={this.handleChange} value={this.state.search}></input>
+                    <button type="submit" className="btn btn-primary">
+                        <i className="fa fa-search"></i>
+                    </button>
                 </form>
             </React.Fragment>
          );
