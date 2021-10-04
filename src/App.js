@@ -12,6 +12,8 @@ import DisplayProducts from './components/DisplayProducts/DisplayProducts';
 import AddProductForm from './components/AddProductForm/AddProductForm';
 import HomePage from './components/HomePage/HomePage';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
+import ProductDetails from './components/ProductDetails/ProductDetails';
+import ReviewForm from './components/ReviewForm/ReviewForm';
 
 class App extends Component {
     state = { 
@@ -118,6 +120,9 @@ class App extends Component {
             <Route path='/logout' component={Login} />
             <Route path='/shoppingCart' render={props => <ShoppingCart {...props} cartList={this.state.cart} />} />
 
+            
+            <Route path='/details'  render={props => <ProductDetails {...props} details={this.state.products} />} />
+            <Route path='/review'  render={props => <ReviewForm {...props} review={this.state.products} />} />
             <Redirect to='/not-found' />
           </Switch>
           </BrowserRouter>

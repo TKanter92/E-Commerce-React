@@ -49,7 +49,10 @@ class NavBar extends Component {
 
       <React.Fragment>
           
-           
+       {/* <Nav.Link as={Link} to="/">Store Name Here</Nav.Link>
+
+        <Nav.Link as={Link} to="/addnew">Add New</Nav.Link> */}
+        
           {!this.props.user ? 
           null
           : <button onClick = {() =>this.props.logoutUser()}>Logout</button>
