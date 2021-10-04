@@ -19,8 +19,8 @@ function ProductDetails(props) {
     return <h4>Loading product...</h4>;
   } else {
     console.log("product", product);
-    product.map((item) => {
-    if (item.is_available === true) {
+    // product.map((item) => {
+    // if (item.is_available === true) {
     return (
       <tr>
         {/* <td>{item.productName}</td>
