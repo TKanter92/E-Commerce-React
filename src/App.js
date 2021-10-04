@@ -14,6 +14,8 @@ import HomePage from './components/HomePage/HomePage';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import ReviewForm from './components/ReviewForm/ReviewForm';
+import TitleBar from './components/TitleBar/TitleBar';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
     state = { 
@@ -109,7 +111,9 @@ class App extends Component {
     //const user = this.state.user;
     return (
       <div>
+        <TitleBar />
         <NavBar user = {this.state.user} logoutUser={this.logoutUser}/>
+        <Footer />
         <div>
           <BrowserRouter>
           <Switch>
@@ -121,7 +125,7 @@ class App extends Component {
                   return <Login {...props} getCredentials = {this.getCredentials}/>;
                 } else {
                   console.log("false: " +  this.state.user);
-                  return <DisplayProducts {...props} productList={this.state.products}  />
+                  return <DisplayProducts {...props} productList={this.state.products}  />;
                 }
               }}
             /> 
