@@ -26,7 +26,7 @@ class Search extends Component {
             console.log("Search " + this.state.search);
              const results = this.props.product.filter(product =>
                 product.productName.toLowerCase().includes(this.state.search.toLowerCase()) ||
-                 //product.artist.toLowerCase().includes(this.state.search.toLowerCase()) ||
+                product.artist.toLowerCase().includes(this.state.search.toLowerCase()) ||
                  product.genre.toLowerCase().includes(this.state.search.toLowerCase())
                 );
             if(results != ''){
