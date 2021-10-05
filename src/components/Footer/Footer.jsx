@@ -1,8 +1,9 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="text-center text-dark p-3">
+    <div className="text-center">
       <footer className="footer">
         <h3>The Vinyl Resting Place</h3>
         <h4>Created By:</h4>

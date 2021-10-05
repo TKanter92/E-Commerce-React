@@ -1,3 +1,23 @@
 .footer {
   background-color: #2d3436;
+  position: sticky;
+  width: 100%;
+  padding: 0px;
+  position: fixed;
+  bottom: 0%;
+}
+
+h3 {
+  color: azure;
+  font-size: 15mm;
+}
+
+h4 {
+  color: azure;
+  font-size: 13px;
+}
+
+h5 {
+  color: azure;
+  font-size: 13px;
 }
