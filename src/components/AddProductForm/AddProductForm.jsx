@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import DisplayProducts from "../DisplayProducts/DisplayProducts";
 
 class AddProductForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            productName: "",
-            artist: "",
-            price: null,
-            description: "",
-            genre: "",
-            rating: null
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      productName: "",
+      artist: "",
+      price: null,
+      description: "",
+      genre: "",
+      rating: null,
+    };
+  }
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        this.props.addNewProduct(this.state);
-    }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.addNewProduct(this.state);
+  };
 
     render() {
         return(
@@ -66,7 +68,7 @@ class AddProductForm extends Component {
                     </div>
                     <div className="row">
                         <div className="col-sm-10 col-auto">
-                            <button type="submit" className="btn btn-primary">Add Product</button>
+                            <button type="submit" onClick={DisplayProducts} className="btn btn-primary">Add Product</button>
                         </div>   
                     </div>
                 </form>

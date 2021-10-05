@@ -6,18 +6,18 @@ import Register from "./components/Register/Register";
 // import { Switch } from 'react-router';
 import { Redirect } from "react-router";
 import { Route, Switch } from "react-router";
-import {BrowserRouter} from "react-router-dom";
-import axios from 'axios';
-import DisplayProducts from './components/DisplayProducts/DisplayProducts';
-import AddProductForm from './components/AddProductForm/AddProductForm';
-import HomePage from './components/HomePage/HomePage';
-import ShoppingCart from './ShoppingCart/ShoppingCart';
-import ProductDetails from './components/ProductDetails/ProductDetails';
-import ReviewForm from './components/ReviewForm/ReviewForm';
-import TitleBar from './components/TitleBar/TitleBar';
-import Footer from './components/Footer/Footer';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter } from "react-router-dom";
+import axios from "axios";
+import DisplayProducts from "./components/DisplayProducts/DisplayProducts";
+import AddProductForm from "./components/AddProductForm/AddProductForm";
+import HomePage from "./components/HomePage/HomePage";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
+import ReviewForm from "./components/ReviewForm/ReviewForm";
+import TitleBar from "./components/TitleBar/TitleBar";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   state = {
@@ -35,7 +35,7 @@ class App extends Component {
         user: user,
       });
       console.log(this.state.products);
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
   }

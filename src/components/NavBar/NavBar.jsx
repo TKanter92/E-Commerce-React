@@ -1,49 +1,53 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Login from '../Login/Login';
-import { Modal } from 'react-responsive-modal';
-import 'react-responsive-modal/styles.css'
-
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import Login from "../Login/Login";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import DisplayProducts from "../DisplayProducts/DisplayProducts";
+import AddProductForm from "../AddProductForm/AddProductForm";
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       user: props.user,
       isLoggedIn: false,
-
-     }
+    };
   }
 
-  onClickButton = e =>{
-    this.setState({openModal: true})
-  }
+  onClickButton = (e) => {
+    this.setState({ openModal: true });
+  };
 
-  onCloseModal = () =>{
-    this.setState({openModal:false})
-  }
+  onCloseModal = () => {
+    this.setState({ openModal: false });
+  };
 
   //Changes isLogged
-  changeLogin = () =>{
+  changeLogin = () => {
     this.setState({
-      isLoggedIn: true
-    })
-  }
+      isLoggedIn: true,
+    });
+  };
 
-  render() { 
-    return ( 
-
+  render() {
+    return (
       <React.Fragment>
-        {!this.props.user ? 
-          null
-          : 
+        {!this.props.user ? null : (
           <div className="d-flex container justify-content-end align-items-center">
-            <button className="btn btn-outline-primary" onClick = {() =>this.props.logoutUser()}>Logout</button>
-          </div>   
-        }
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => this.props.logoutUser()}
+            >
+              Logout
+            </button>
+          </div>
+        )}
       </React.Fragment>
-     );
+    );
   }
 }
- 
+
 export default NavBar;

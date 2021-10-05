@@ -46,6 +46,9 @@ const DisplayProducts = (props) => {
             );
           })}
         </tbody>
+        <Link as={Link} to="/addnew">
+          Add Album
+        </Link>
       </table>
     </React.Fragment>
   );
