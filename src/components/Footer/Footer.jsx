@@ -11,10 +11,10 @@ const Footer = () => {
 
         </div>
         <div className="text-white">
-          <h3>The Vinyl Resting Place</h3>
+          <div>The Vinyl Resting Place</div>
         </div>
         <div className="text-white">
-          <h4>Created By:</h4>
+          <div>Created By:</div>
         </div>
         <div className="text-white ">
           <div>Cesar, Charmaine Llacuna, Mekinley Saint Victor, Richard Fleming and Tyler Kanter</div>
