@@ -6,6 +6,7 @@ import "react-responsive-modal/styles.css";
 import DisplayProducts from "../DisplayProducts/DisplayProducts";
 import AddProductForm from "../AddProductForm/AddProductForm";
 import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 class NavBar extends Component {
   constructor(props) {
@@ -44,9 +45,6 @@ class NavBar extends Component {
             </button>
           </div>
         )}
-
-        {/* <button onClick={AddProductForm}>Add Album</button> */}
-        {/* <Link to={`/addnew/`}>Add Album</Link> */}
       </React.Fragment>
     );
   }
