@@ -26,33 +26,51 @@ class AddProductForm extends Component {
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <label for="productName">Product Name</label>
-                    <input onChange={this.handleChange} type="text" name="productName" />
-                </div>
-                <div>
-                    <label for="artist">Artist</label>
-                    <input onChange={this.handleChange} type="text" name="artist" />
-                </div>
-                <div>
-                    <label for="price">Price</label>
-                    <input onChange={this.handleChange} type="text" name="price" />
-                </div>
-                <div>
-                    <label for="description">Description</label>
-                    <input onChange={this.handleChange} type="text" name="description" />
-                </div>
-                <div>
-                    <label for="genre">Genre</label>
-                    <input onChange={this.handleChange} type="text" name="genre" />
-                </div>
-                <div>
-                    <label for="rating">Rating</label>
-                    <input onChange={this.handleChange} type="text" name="rating" />
-                </div>
-                <button type="submit">Add Product</button>
-            </form>
+            <div className="d-flex container justify-content-start align-items-center">
+                <form className="form-group" onSubmit={this.handleSubmit}>
+                    <div className = "row mb-3">
+                        <label for="productName">Album Name</label>
+                            <div className="col-sm-10">
+                                <input placeholder="Album Name..." onChange={this.handleChange} type="text" name="productName" />
+                            </div>
+                    </div>
+                    <div className = "row mb-3">
+                        <label for="artist">Artist</label>
+                            <div className="col-sm-10">
+                                <input placeholder="Artist Name..." onChange={this.handleChange} type="text" name="artist" />
+                            </div>
+                    </div>
+                    <div className = "row mb-3">
+                        <label for="price">Price</label>
+                            <div className="col-sm-10">
+                                <input placeholder="Price..." onChange={this.handleChange} type="text" name="price" />
+                            </div>
+                    </div>
+                    <div className = "row mb-3">
+                        <label for="description">Description</label>
+                            <div className="col-sm-10">
+                                <input placeholder="Description..." onChange={this.handleChange} type="text" name="description" />
+                            </div>
+                    </div>
+                    <div className = "row mb-3">
+                        <label for="genre">Genre</label>
+                            <div className="col-sm-10">
+                                <input placeholder="Genre..." onChange={this.handleChange} type="text" name="genre" />
+                            </div>
+                    </div>
+                    <div className = "row mb-3">
+                        <label for="rating">Rating</label>
+                            <div className="col-sm-10">
+                                <input placeholder="Rating..." onChange={this.handleChange} type="text" name="rating" />
+                            </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-10 col-auto">
+                            <button type="submit" className="btn btn-primary">Add Product</button>
+                        </div>   
+                    </div>
+                </form>
+            </div> 
         );
     }
 }
