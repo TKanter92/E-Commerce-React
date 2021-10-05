@@ -5,13 +5,15 @@ const Footer = () => {
   return (
     <div className="text-center">
       <footer className="footer">
-        <h3>The Vinyl Resting Place</h3>
-        <h4>Created By:</h4>
-        <h5>
+        <h5>The Vinyl Resting Place</h5>
+        <h6 className="text-uppercase mb-4 font-weight-bold text-white">
+          Created By:
+        </h6>
+        <h7>
           Cesar, Charmaine Llacuna, Mekinley Saint Victor, Richard Fleming and
           Tyler Kanter
-        </h5>
-        <h5>Copyright © 2021</h5>
+        </h7>
+        <h6>Copyright © 2021</h6>
       </footer>
     </div>
   );

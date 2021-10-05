@@ -1,5 +1,5 @@
 .footer {
-  background-color: #2d3436;
+  background-color: #aaa69d;
   position: sticky;
   width: 100%;
   padding: 0px;
@@ -7,17 +7,15 @@
   bottom: 0%;
 }
 
-h3 {
-  color: azure;
-  font-size: 15mm;
-}
-
-h4 {
-  color: azure;
+h7 {
+  color: #f1f2f6;
   font-size: 13px;
 }
-
 h5 {
-  color: azure;
+  color: #f1f2f6;
+  font-size: 14px;
+}
+h6 {
+  color: #f1f2f6;
   font-size: 13px;
 }
