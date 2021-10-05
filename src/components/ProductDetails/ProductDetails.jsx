@@ -20,14 +20,29 @@ function ProductDetails(props) {
   } else {
     console.log("product", product);
     return (
-      <tr>
-        <td>{product.productName}</td>
-        <td>{product.artist}</td>
-        <td>{product.genre}</td>
-        <td>{product.rating}</td>
-        <td>{product.price}</td>
-        <td>{product.description}</td>
-      </tr>
+      <table class="table table-striped table-dark">
+        
+          <thead>
+            <tr>
+              <th>Album Name</th>
+              <th>Artist</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              <th>Price</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{product.productName}</td>
+              <td>{product.artist}</td>
+              <td>{product.genre}</td>
+              <td>{product.rating}</td>
+              <td>{product.price}</td>
+              <td>{product.description}</td>
+            </tr>
+          </tbody>
+      </table> 
     );
   }
 }
